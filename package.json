@@ -1,0 +1,11 @@
+{
+  "name": "cigarette-gif-bot",
+  "version": "1.0.0",
+  "description": "Slack bot who send cigarette gif",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
