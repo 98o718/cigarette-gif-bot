@@ -3,8 +3,14 @@ import { config } from 'dotenv';
 
 import { IGifDataSource } from './igif-data-source';
 
-interface GiphyResponse {
-	data: { image_original_url: string };
+interface GiphyRandomGifResponse {
+	data: { 
+		images: {
+			downsized: {
+				url: string;
+			}
+		}
+	};
 }
 
 config();
@@ -20,8 +26,8 @@ export class GiphyGifDataSource implements IGifDataSource {
 		url.searchParams.append('tag', 'cigarette');
 
 		const response = await fetch(url.href);
-		const json = await response.json() as GiphyResponse;
+		const json = await response.json() as GiphyRandomGifResponse;
 
-		return json.data.image_original_url;
+		return json.data.images.downsized.url;
 	}
 }

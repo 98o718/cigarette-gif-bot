@@ -1,14 +1,20 @@
 import { Handler } from "@netlify/functions";
 
 import { GiphyGifDataSource } from '../gif-data-source/giphy-gif-data-source';
+import { makeSlackImageMessage } from '../slack-messages/slack-message-maker';
 
-const handler: Handler = async (event, context) => {
+const handler: Handler = async () => {
 	try {
 		const src = await new GiphyGifDataSource().get();
+
+		const message = makeSlackImageMessage(src);
 	
 		return {
 			statusCode: 200,
-			body: JSON.stringify({ src: src }),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(message),
 		};
 	} catch (error) {
 		const message = error instanceof Error ? error.message : 'Unknown error';
