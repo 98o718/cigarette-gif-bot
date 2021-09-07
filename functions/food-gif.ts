@@ -1,5 +1,5 @@
 import { makeGifHandler } from '../gif-handler';
 
-const handler = makeGifHandler('cigarette');
+const handler = makeGifHandler('food');
 
 export { handler };

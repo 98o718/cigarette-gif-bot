@@ -1,3 +1,3 @@
 export interface IGifDataSource {
-	get(): Promise<string>;
+	get(tag: string): Promise<string>;
 }
