@@ -1,9 +1,9 @@
 export interface GiphyRandomGifResponse {
-	data: { 
+	data: {
 		images: {
 			downsized: {
 				url: string;
-			}
-		}
+			};
+		};
 	};
 }

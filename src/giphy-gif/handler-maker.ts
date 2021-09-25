@@ -9,9 +9,9 @@ export function makeGifHandler(tag: string): Handler {
 	return async () => {
 		try {
 			const src = await new GiphyGifDataSource().get(tag);
-	
+
 			const message = makeSlackImageMessage(src, `${tag} gif`);
-		
+
 			return {
 				statusCode: 200,
 				headers: {
@@ -21,11 +21,11 @@ export function makeGifHandler(tag: string): Handler {
 			};
 		} catch (error) {
 			const message = error instanceof Error ? error.message ?? unknownErrorMessage : unknownErrorMessage;
-	
+
 			return {
 				statusCode: 500,
 				body: JSON.stringify({ error: message }),
-			}
+			};
 		}
 	};
 }

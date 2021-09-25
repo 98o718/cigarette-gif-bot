@@ -1,12 +1,13 @@
 {
-  "name": "cigarette-gif-bot",
+  "name": "slack-gif-bot",
   "version": "1.0.0",
-  "description": "Slack bot who send cigarette gif",
-  "main": "index.js",
+  "description": "Slack bot who send cigarette and food gifs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "npx netlify deploy --dir \".\" --prod",
+    "check-lint": "eslint \"./src/**/*.ts\"",
+    "fix-lint": "npm run check-lint -- --fix"
   },
-  "author": "",
+  "author": "Max Kalyakin",
   "license": "MIT",
   "dependencies": {
     "@netlify/functions": "^0.7.2",
@@ -15,6 +16,16 @@
   },
   "devDependencies": {
     "@types/node": "^16.7.10",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "prettier": "2.4.1",
+    "prettier-eslint": "^13.0.0",
     "typescript": "^4.4.2"
   }
 }

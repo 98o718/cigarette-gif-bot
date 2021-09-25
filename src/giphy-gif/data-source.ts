@@ -20,7 +20,7 @@ export class GiphyGifDataSource {
 		url.searchParams.append('tag', tag);
 
 		const response = await fetch(url.href);
-		const json = await response.json() as GiphyRandomGifResponse;
+		const json = (await response.json()) as GiphyRandomGifResponse;
 
 		return json.data.images.downsized.url;
 	}

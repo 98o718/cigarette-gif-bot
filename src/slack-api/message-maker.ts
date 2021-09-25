@@ -8,7 +8,7 @@ export function makeSlackImageMessage(imageSrc: string, altText: string): SlackI
 				type: 'image',
 				image_url: imageSrc,
 				alt_text: altText,
-			}
-		]
+			},
+		],
 	};
 }
