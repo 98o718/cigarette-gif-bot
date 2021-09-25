@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Slack bot who send cigarette and food gifs",
   "scripts": {
-    "deploy": "npx netlify deploy --dir \".\" --prod",
+    "deploy": "npx netlify deploy --dir . --prod",
     "check-lint": "eslint \"./src/**/*.ts\"",
     "fix-lint": "npm run check-lint -- --fix"
   },
