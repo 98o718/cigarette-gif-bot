@@ -1,7 +1,7 @@
 {
   "name": "slack-gif-bot",
   "version": "1.0.0",
-  "description": "Slack bot who send cigarette and food gifs",
+  "description": "The Slack bot which sends cigarette and food gifs using netlify serverless functions",
   "scripts": {
     "deploy": "npx netlify deploy --dir . --prod",
     "check-lint": "eslint \"./src/**/*.ts\"",
