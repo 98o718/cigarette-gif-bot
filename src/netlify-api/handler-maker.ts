@@ -1,6 +1,6 @@
 import { Handler } from '@netlify/functions';
 
-import { GiphyGifDataSource } from './data-source';
+import { fetchRandomGiphyGif } from '../giphy-api/gif-data-source';
 import { makeSlackImageMessage } from '../slack-api/message-maker';
 
 const unknownErrorMessage = 'Unknown error';
@@ -8,7 +8,7 @@ const unknownErrorMessage = 'Unknown error';
 export function makeGifHandler(tag: string): Handler {
 	return async () => {
 		try {
-			const src = await new GiphyGifDataSource().get(tag);
+			const src = await fetchRandomGiphyGif(tag);
 
 			const message = makeSlackImageMessage(src, `${tag} gif`);
 

@@ -1,3 +1,3 @@
-import { makeGifHandler } from '../giphy-gif/handler-maker';
+import { makeGifHandler } from '../netlify-api/handler-maker';
 
 export const handler = makeGifHandler('food');
