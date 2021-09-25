@@ -16,7 +16,7 @@ npm install
 
 ## Configuration
 
-1. Config `GIPHY_API_KEY` and `GIPHY_BASE_URL` environment variables in your netlify site settings
+1. Config `GIPHY_API_KEY` and `GIPHY_BASE_URL` environment variables in your netlify site settings (see [.env.sample]([.env.sample]))
 1. Add Slack bot commands with `https://your-slack-bot-domain/.netlify/functions/cigarette-gif` and `https://your-slack-bot-domain/.netlify/functions/food-gif` request URLs
 
 ## Deploy
