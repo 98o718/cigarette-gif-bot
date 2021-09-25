@@ -1,27 +1,21 @@
 import fetch from 'node-fetch';
 import { config } from 'dotenv';
 
-import { IGifDataSource } from './igif-data-source';
-
-interface GiphyRandomGifResponse {
-	data: { 
-		images: {
-			downsized: {
-				url: string;
-			}
-		}
-	};
-}
+import { GiphyRandomGifResponse } from './types';
 
 config();
 
-export class GiphyGifDataSource implements IGifDataSource {
+export class GiphyGifDataSource {
 	public async get(tag: string): Promise<string> {
 		if (process.env.GIPHY_API_KEY === undefined) {
-			throw new Error('Api key is not provided');
+			throw new Error('GIPHY api key is not provided');
 		}
 
-		const url = new URL('random', 'https://api.giphy.com/v1/gifs/');
+		if (process.env.GIPHY_BASE_URL === undefined) {
+			throw new Error('GIPHY base url is not provided');
+		}
+
+		const url = new URL('random', process.env.GIPHY_BASE_URL);
 		url.searchParams.append('api_key', process.env.GIPHY_API_KEY);
 		url.searchParams.append('tag', tag);
 

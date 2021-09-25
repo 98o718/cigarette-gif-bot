@@ -1,4 +1,4 @@
-import { makeGifHandler } from '../gif-handler';
+import { makeGifHandler } from '../giphy-gif/handler-maker';
 
 const handler = makeGifHandler('cigarette');
 
